@@ -15,6 +15,7 @@ public class SaveTimeTable {
 	public static String officalTimeTableFolderPath = "D:\\workSpace\\sts\\BusConfig\\resources\\timetable\\official";
 
 	public static void main(String[] args) {
+		officalTimeTableFolderPath = "C:\\Users\\Administrator\\Desktop\\新建文件夹";
 		String[] busNameArr = FileUtil.readTextFile(SaveTimeTable.class.getResource("/busNameList-amap.txt").getPath())
 				.split("\n");
 		String baseUrl = "http://gongjiaomishu.com/web/city/daqing/time/";
@@ -29,13 +30,16 @@ public class SaveTimeTable {
 			}
 			FileUtil.saveToFile(officalTimeTableFolderPath, busName + ".html", direction0);
 			String direction1 = null;
-			try {
-				direction1 = WebUtil.sendGetThrowException(url);
-			} catch (IOException e) {
-				System.out.println("error on 反向！！！");
-				e.printStackTrace();
+			if (busName.startsWith("h") == false) {
+				url = baseUrl + "f" + busName + ".html";
+				try {
+					direction1 = WebUtil.sendGetThrowException(url);
+				} catch (IOException e) {
+					System.out.println("error on 反向！！！");
+					e.printStackTrace();
+				}
+				FileUtil.saveToFile(officalTimeTableFolderPath, "f" + busName + ".html", direction1);
 			}
-			FileUtil.saveToFile(officalTimeTableFolderPath, "f" + busName + ".html", direction1);
 		}
 	}
 

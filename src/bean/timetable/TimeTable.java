@@ -23,7 +23,7 @@ public class TimeTable {
 	private String timeCost;
 	// 平均间隔
 	private String averageInterval;
-	// 发车时间字符串列表，格式：4:50
+	// 发车时间字符串列表，例如：04:50
 	private List<String> stringList;
 	// 发车时间列表
 	private List<DepartTime> departTimeList;
