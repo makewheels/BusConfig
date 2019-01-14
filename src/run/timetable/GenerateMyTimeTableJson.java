@@ -13,8 +13,8 @@ import org.jsoup.select.Elements;
 
 import com.alibaba.fastjson.JSON;
 
-import bean.timetable.DepartTime;
-import bean.timetable.TimeTable;
+import bean.timetable.my.DepartTime;
+import bean.timetable.my.TimeTable;
 import util.FileUtil;
 
 /**
@@ -39,7 +39,8 @@ public class GenerateMyTimeTableJson {
 			// 解析html文件
 			try {
 				document = Jsoup.parse(file, "utf-8");
-
+				// 标题
+				String originalTopic = document.getElementsByClass("topic").get(0).text();
 				// 描述
 				String originalDescription = document.getElementsByClass("att").get(0).text();
 				// 表格
@@ -80,6 +81,7 @@ public class GenerateMyTimeTableJson {
 					busName = filename.substring(0, filename.lastIndexOf("."));
 				}
 				timeTable.setBusName(busName);
+				timeTable.setOriginalTopic(originalTopic);
 				timeTable.setOriginalDescription(originalDescription);
 				// 响应给客户端的时间集合，例如：04:50
 				List<String> stringList = new ArrayList<>();

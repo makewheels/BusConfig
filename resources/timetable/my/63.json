@@ -1,1 +1,1 @@
-{"busName":"63","departTimeList":[{"hour":6,"localTime":"06:20","minute":20,"myTimeString":"6:20"},{"hour":15,"localTime":"15:10","minute":10,"myTimeString":"15:10"}],"direction":"0","originalDescription":"全程23.5公里，单程运行时间50分钟。注：此时间表内容仅供参考。","stringList":["06:20","15:10"]}
+{"busName":"63","departTimeList":[{"hour":6,"localTime":"06:20","minute":20,"myTimeString":"6:20"},{"hour":15,"localTime":"15:10","minute":10,"myTimeString":"15:10"}],"direction":"0","originalDescription":"全程23.5公里，单程运行时间50分钟。注：此时间表内容仅供参考。","originalTopic":"63路新天问始发时间表","stringList":["06:20","15:10"]}

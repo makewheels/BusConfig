@@ -1,4 +1,4 @@
-package bean.timetable;
+package bean.timetable.my;
 
 import java.util.List;
 
@@ -13,6 +13,8 @@ public class TimeTable {
 	private String busName;
 	// 方向
 	private String direction;
+	// 原始标题
+	private String originalTopic;
 	// 原始描述
 	private String originalDescription;
 	// 分区点
@@ -42,6 +44,14 @@ public class TimeTable {
 
 	public void setDirection(String direction) {
 		this.direction = direction;
+	}
+
+	public String getOriginalTopic() {
+		return originalTopic;
+	}
+
+	public void setOriginalTopic(String originalTopic) {
+		this.originalTopic = originalTopic;
 	}
 
 	public String getOriginalDescription() {
@@ -102,9 +112,10 @@ public class TimeTable {
 
 	@Override
 	public String toString() {
-		return "TimeTable [busName=" + busName + ", direction=" + direction + ", originalDescription="
-				+ originalDescription + ", partition=" + partition + ", distance=" + distance + ", timeCost=" + timeCost
-				+ ", averageInterval=" + averageInterval + ", stringList=" + stringList + ", departTimeList="
-				+ departTimeList + "]";
+		return "TimeTable [busName=" + busName + ", direction=" + direction + ", originalTopic=" + originalTopic
+				+ ", originalDescription=" + originalDescription + ", partition=" + partition + ", distance=" + distance
+				+ ", timeCost=" + timeCost + ", averageInterval=" + averageInterval + ", stringList=" + stringList
+				+ ", departTimeList=" + departTimeList + "]";
 	}
+
 }
